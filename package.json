@@ -1,0 +1,25 @@
+{
+  "name": "checklist",
+  "version": "0.2.0",
+  "description": "listado de tareas diarias",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miguel-GH681/checklist.git"
+  },
+  "author": "Alvaro Gonzalez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Miguel-GH681/checklist/issues"
+  },
+  "homepage": "https://github.com/Miguel-GH681/checklist#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "inquirer": "^9.1.4",
+    "uuid": "^9.0.0"
+  }
+}
