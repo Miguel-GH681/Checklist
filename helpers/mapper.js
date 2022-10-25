@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const path = './db/tareas.json'
+const path = './db/tareas.json';
 
 export const guardarTarea = ( data )=>{
     fs.writeFileSync(path, JSON.stringify( data ));

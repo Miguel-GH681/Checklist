@@ -71,3 +71,61 @@ export const getDescription = async (message)=>{
     const { description } = await inquirer.prompt(question);
     return description;
 }
+
+export const tareasMenu = async (tareas = [])=>{
+
+    const choices = tareas.map((tarea, index)=>{
+        return {
+            value: tarea.id,
+            name: `${index + 1}. ${tarea.description}`
+        }
+    })
+
+    choices.unshift({
+        value: '0',
+        name: '0. Salir'
+    })
+
+    const question = [{
+        type: 'list',
+        name: 'id',
+        message: '¿Qué tarea desea eliminar?',
+        choices
+    }]
+
+    const { id } = await inquirer.prompt(question);
+    return id;
+}
+
+export const confirmarEliminacion = async (message = '')=>{
+    const question = [{
+        type: 'confirm',
+        name: 'ok',
+        message
+    }]
+
+    const { ok } = await inquirer.prompt(question);
+    return ok
+}
+
+export const completarTareas = async ( tareas = [] )=>{
+    const choices = tareas.map( (tarea, index)=>{
+        return {
+            value: tarea.id,
+            name: `${index+1}. ${tarea.description}`,
+            checked: tarea.completed ? true : false
+        }
+    })
+
+    const pregunta = [
+        {
+            type: 'checkbox',
+            name: 'id',
+            message: 'Completar tarea(s).',
+            choices
+        }
+    ]
+
+    const { id } = await inquirer.prompt(pregunta);
+    return id;
+}
